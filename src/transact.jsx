@@ -1,7 +1,13 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 
-function Transact({ defaultAccount }) {
-  const [transactions, setTransactions] = useState([]);
+// Transact.propTypes = {
+//   defaultAccount: PropTypes.object.isRequired,
+// };
+
+
+function Transact({ defaultAccount, transactions, setTransactions } ) {
+  // const [transactions, setTransactions] = useState([]);
 
   useEffect(() => {
     if (defaultAccount) {
@@ -16,7 +22,7 @@ function Transact({ defaultAccount }) {
     }
   }, [defaultAccount]);
 
-  console.log(transactions);
+  console.log(transactions, "transactions at transact");
   return (
     <div>
       <h1>Transactions for {defaultAccount}</h1>
