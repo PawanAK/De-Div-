@@ -1,12 +1,16 @@
-import { useState } from "react";
 import "./App.css";
-import Metamask from "./metamask";
+import Header from "./header.jsx";
+import Hero from "./hero.jsx";
 
 function App() {
   return (
     <>
-      Hello world
-      <Metamask />
+      <div className="header">
+      <Header />
+    </div>
+    <div className="hero">
+      <Hero />
+    </div>
     </>
   );
 }
