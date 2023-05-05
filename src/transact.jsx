@@ -26,7 +26,7 @@ function Transact({ defaultAccount, transactions, setTransactions } ) {
   return (
     <div>
       <h1>Transactions for {defaultAccount}</h1>
-      <table>
+      {/* <table>
         <thead>
           <tr>
             <th>Hash</th>
@@ -45,7 +45,7 @@ function Transact({ defaultAccount, transactions, setTransactions } ) {
             </tr>
           ))}
         </tbody>
-      </table>
+      </table> */}
     </div>
   );
 }
