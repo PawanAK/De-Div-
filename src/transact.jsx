@@ -16,6 +16,7 @@ function Transact({ defaultAccount }) {
     }
   }, [defaultAccount]);
 
+  console.log(transactions);
   return (
     <div>
       <h1>Transactions for {defaultAccount}</h1>
