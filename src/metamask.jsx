@@ -41,7 +41,7 @@ const Metamask = () => {
       <h3>Adress:{defaultAccount}</h3>
       <h3>Balance:{userBallance}</h3>
       <p>{errorMsg}</p>
-      <Transact defaultAccount={defaultAccount} />
+      {defaultAccount && <Transact defaultAccount={defaultAccount} />}
     </>
   );
 };

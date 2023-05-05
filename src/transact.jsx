@@ -1,24 +1,24 @@
 import React, { useState, useEffect } from "react";
-import Web3 from "web3";
 
-function Transact(props) {
-  console.log(props);
+function Transact({ defaultAccount }) {
   const [transactions, setTransactions] = useState([]);
-  const address = props.defaultAccount;
+
   useEffect(() => {
-    async function fetchTransactions() {
-      const web3 = new Web3(
-        "https://rpc-mumbai.maticvigil.com/v1/b7e1b6c3c43c40ee93814f8ceb78bdb7"
-      );
-      const txs = await web3.eth.getTransactions(address);
-      setTransactions(txs);
+    if (defaultAccount) {
+      async function fetchTransactions() {
+        const response = await fetch(
+          `https://api-testnet.polygonscan.com/api?module=account&action=txlist&address=${defaultAccount}&startblock=0&endblock=99999999&sort=asc&apikey=<YOUR_API_KEY>`
+        );
+        const data = await response.json();
+        setTransactions(data.result);
+      }
+      fetchTransactions();
     }
-    fetchTransactions();
-  }, []);
+  }, [defaultAccount]);
 
   return (
     <div>
-      <h1>Transactions for {address}</h1>
+      <h1>Transactions for {defaultAccount}</h1>
       <table>
         <thead>
           <tr>
