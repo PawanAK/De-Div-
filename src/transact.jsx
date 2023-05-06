@@ -21,7 +21,7 @@ function Transact({ defaultAccount, transactions, setTransactions }) {
     }
   }, [defaultAccount]);
 
-  console.log(transactions, "transactions at transact");
+  // console.log(transactions, "transactions at transact");
   return <div></div>;
 }
 

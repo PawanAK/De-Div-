@@ -5,7 +5,7 @@ import { useState } from "react";
 
 function App() {
   const [transactions, setTransactions] = useState([]);
-  console.log('transactions at app', transactions, 'setTransactions at app', setTransactions, 'transactions at app');
+  // console.log('transactions at app', transactions, 'setTransactions at app', setTransactions, 'transactions at app');
   
   return (
     <>

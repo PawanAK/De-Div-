@@ -27,8 +27,8 @@ export default function MyModal() {
   // Handle form submission here
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(inputFields);
-    console.log("Split Equally:", splitEqually);
+    // console.log(inputFields);
+    // console.log("Split Equally:", splitEqually);
   };
 
   return (
@@ -40,7 +40,6 @@ export default function MyModal() {
       {isOpen && (
         <div className="modal-overlay">
           <div className="modal">
-            <h1>Transaction Details</h1>
             <form onSubmit={handleSubmit}>
               {inputFields.map((input, index) => (
                 <div key={index}>

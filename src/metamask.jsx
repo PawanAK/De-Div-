@@ -24,7 +24,7 @@ const Metamask = ({ transactions, setTransactions }) => {
         params: [String(address), "latest"],
       })
       .then((bal) => {
-        console.log(bal);
+        // console.log(bal);
         setUserBallance(ethers.utils.formatEther(bal));
       });
   };
@@ -33,7 +33,7 @@ const Metamask = ({ transactions, setTransactions }) => {
     setDefaultAccount(accName);
     getBalance(accName);
   };
-  console.log('transactions at metamask', transactions);
+  // console.log('transactions at metamask', transactions);
   
   return (
     <>

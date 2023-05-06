@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import MyModal from "./MyModel.jsx";
 
 export default function Hero({ transactions, setTransactions }) {
-  console.log("hero section this is", transactions, setTransactions);
+//   console.log("hero section this is", transactions, setTransactions);
 
   const [showTableHeaders, setShowTableHeaders] = useState(false);
 
@@ -13,16 +13,16 @@ export default function Hero({ transactions, setTransactions }) {
     }
   }, [transactions]);
 
-  console.log(
-    "showTableHeaders",
-    showTableHeaders,
-    "transactions",
-    transactions,
-    "setTransactions",
-    setTransactions,
-    "transactions at hero"
-  );
-  console.log(typeof MyModal, "asdfasfasfdasfasdf");
+//   console.log(
+//     "showTableHeaders",
+//     showTableHeaders,
+//     "transactions",
+//     transactions,
+//     "setTransactions",
+//     setTransactions,
+//     "transactions at hero"
+//   );
+//   console.log(typeof MyModal, "asdfasfasfdasfasdf");
   return (
     <>
       <table>
