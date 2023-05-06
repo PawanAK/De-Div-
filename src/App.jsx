@@ -7,12 +7,16 @@ function App() {
   const [transactions, setTransactions] = useState([]);
   return (
     <>
-      <div className="header">
-        <Header transactions={transactions} setTransactions={setTransactions} />
-      </div>
-      <div className="hero">
-        <Hero transactions={transactions} setTransactions={setTransactions} />
-      </div>
+      <Header
+        transactions={transactions}
+        setTransactions={setTransactions}
+      />
+
+      <Hero
+        transactions={transactions}
+        setTransactions={setTransactions}
+        className="hero"
+      />
     </>
   );
 }

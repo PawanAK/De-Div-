@@ -11,8 +11,8 @@ export default function Hero({ transactions }) {
   }, [transactions]);
 
   return (
-    <>
-      <table>
+    <div className="hero">
+      <table className="hero__table">
         <thead>
           {showTableHeaders && (
             <tr>
@@ -26,7 +26,7 @@ export default function Hero({ transactions }) {
             .filter((tx) => tx.value > 0)
             .sort((a, b) => a.timestamp - b.timestamp)
             .map((tx) => (
-              <tr key={tx.hash}>
+              <tr className="transactions" key={tx.hash}>
                 <td>{tx.to}</td>
                 <td>{(tx.value / 1000000000000000000).toFixed(8)}</td>
                 <td>
@@ -38,6 +38,6 @@ export default function Hero({ transactions }) {
             ))}
         </tbody>
       </table>
-    </>
+    </div>
   );
 }

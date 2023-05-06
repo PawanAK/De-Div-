@@ -1,9 +1,4 @@
-import { useState, useEffect } from "react";
-import PropTypes from "prop-types";
-
-// Transact.propTypes = {
-//   defaultAccount: PropTypes.object.isRequired,
-// };
+import { useEffect } from "react";
 
 function Transact({ defaultAccount, transactions, setTransactions }) {
   // const [transactions, setTransactions] = useState([]);

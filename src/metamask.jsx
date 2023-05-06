@@ -36,11 +36,8 @@ const Metamask = ({ transactions, setTransactions }) => {
   // console.log('transactions at metamask', transactions);
   
   return (
-    <>
-      <h1>MetaMask</h1>
+    <div className="header__connectMeta">
       <button onClick={connectWallet}>Connect</button>
-      {/* <h3>Adress:{defaultAccount}</h3>
-      <h3>Balance:{userBallance}</h3> */}
       <p>{errorMsg}</p>
       {defaultAccount && (
         <Transact
@@ -49,7 +46,7 @@ const Metamask = ({ transactions, setTransactions }) => {
           setTransactions={setTransactions}
         />
       )}
-    </>
+    </div>
   );
 };
 

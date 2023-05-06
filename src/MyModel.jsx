@@ -40,9 +40,9 @@ export default function MyModal({ value }) {
   };
 
   return (
-    <>
+    <div>
       <button onClick={openModal} className="open-modal-btn">
-        Open Modal
+        Split Bill
       </button>
 
       {isOpen && (
@@ -91,11 +91,11 @@ export default function MyModal({ value }) {
               )}
             </div>
             <button onClick={closeModal} className="close-modal-btn">
-              Close Modal
+              X Close
             </button>
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }
