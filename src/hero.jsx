@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import MyModal from "./MyModel";
 
 export default function Hero({ transactions, setTransactions }) {
   console.log("hero section this is", transactions, setTransactions);
@@ -40,7 +41,7 @@ export default function Hero({ transactions, setTransactions }) {
               <td>{tx.to}</td>
               <td>{tx.value}</td>
               <td>
-                <button>Split+</button>
+                <button onClick={<MyModal />}>Split</button>
               </td>
             </tr>
           ))}
