@@ -25,7 +25,7 @@ function Transact({ defaultAccount, transactions, setTransactions } ) {
   console.log(transactions, "transactions at transact");
   return (
     <div>
-      <h1>Transactions for {defaultAccount}</h1>
+      {/* <h1>Transactions for {defaultAccount}</h1> */}
       {/* <table>
         <thead>
           <tr>

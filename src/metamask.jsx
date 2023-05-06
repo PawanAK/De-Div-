@@ -39,8 +39,8 @@ const Metamask = ({ transactions, setTransactions }) => {
     <>
       <h1>MetaMask</h1>
       <button onClick={connectWallet}>Connect</button>
-      <h3>Adress:{defaultAccount}</h3>
-      <h3>Balance:{userBallance}</h3>
+      {/* <h3>Adress:{defaultAccount}</h3>
+      <h3>Balance:{userBallance}</h3> */}
       <p>{errorMsg}</p>
       {defaultAccount && (
         <Transact
