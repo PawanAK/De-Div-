@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import MyModal from "./MyModel";
+import MyModal from "./MyModel.jsx";
 
 export default function Hero({ transactions, setTransactions }) {
   console.log("hero section this is", transactions, setTransactions);
@@ -22,7 +22,7 @@ export default function Hero({ transactions, setTransactions }) {
     setTransactions,
     "transactions at hero"
   );
-
+  console.log(typeof MyModal, "asdfasfasfdasfasdf");
   return (
     <>
       <table>
@@ -41,7 +41,7 @@ export default function Hero({ transactions, setTransactions }) {
               <td>{tx.to}</td>
               <td>{tx.value}</td>
               <td>
-                <button onClick={<MyModal />}>Split</button>
+                <MyModal />
               </td>
             </tr>
           ))}
