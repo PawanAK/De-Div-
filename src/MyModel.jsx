@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import "./MyModel.css";
 
-export default function MyModal() {
+export default function MyModal({ value }) {
   const [isOpen, setIsOpen] = useState(false);
   const [inputFields, setInputFields] = useState([{ address: "" }]);
-  const [splitEqually, setSplitEqually] = useState(false);
+  const [splitEqually, setSplitEqually] = useState(true);
 
   const closeModal = () => {
     setIsOpen(false);
@@ -29,6 +29,14 @@ export default function MyModal() {
     event.preventDefault();
     console.log(inputFields);
     console.log("Split Equally:", splitEqually);
+  };
+
+  const calculateShare = () => {
+    if (splitEqually) {
+      const numberOfFriends = inputFields.length;
+      const sharePerFriend = value / numberOfFriends;
+      return sharePerFriend.toFixed(2);
+    }
   };
 
   return (
@@ -75,6 +83,14 @@ export default function MyModal() {
                 Submit
               </button>
             </form>
+            <div className="split-info">
+              {splitEqually && (
+                <>
+                  <p>Total money getting split: ${value}</p>
+                  <p>Each friend must pay: ${calculateShare()}</p>
+                </>
+              )}
+            </div>
             <button onClick={closeModal} className="close-modal-btn">
               Close Modal
             </button>

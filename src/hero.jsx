@@ -23,6 +23,7 @@ export default function Hero({ transactions, setTransactions }) {
     "transactions at hero"
   );
   console.log(typeof MyModal, "asdfasfasfdasfasdf");
+
   return (
     <>
       <table>
@@ -38,9 +39,9 @@ export default function Hero({ transactions, setTransactions }) {
           {transactions.map((tx) => (
             <tr key={tx.hash}>
               <td>{tx.to}</td>
-              <td>{tx.value}</td>
+              <td>{(tx.value / 1000000000000000000).toFixed(6)}</td>
               <td>
-                <MyModal />
+                <MyModal value={(tx.value / 1000000000000000000).toFixed(6)} />
               </td>
             </tr>
           ))}
