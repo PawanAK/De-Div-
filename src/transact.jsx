@@ -5,8 +5,7 @@ import PropTypes from "prop-types";
 //   defaultAccount: PropTypes.object.isRequired,
 // };
 
-
-function Transact({ defaultAccount, transactions, setTransactions } ) {
+function Transact({ defaultAccount, transactions, setTransactions }) {
   // const [transactions, setTransactions] = useState([]);
 
   useEffect(() => {
@@ -23,31 +22,7 @@ function Transact({ defaultAccount, transactions, setTransactions } ) {
   }, [defaultAccount]);
 
   console.log(transactions, "transactions at transact");
-  return (
-    <div>
-      {/* <h1>Transactions for {defaultAccount}</h1> */}
-      {/* <table>
-        <thead>
-          <tr>
-            <th>Hash</th>
-            <th>From</th>
-            <th>To</th>
-            <th>Value</th>
-          </tr>
-        </thead>
-        <tbody>
-          {transactions.map((tx) => (
-            <tr key={tx.hash}>
-              <td>{tx.hash}</td>
-              <td>{tx.from}</td>
-              <td>{tx.to}</td>
-              <td>{tx.value}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table> */}
-    </div>
-  );
+  return <div></div>;
 }
 
 export default Transact;
