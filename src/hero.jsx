@@ -30,6 +30,7 @@ export default function Hero({ transactions, setTransactions }) {
             <tr>
               <th>To</th>
               <th>Value</th>
+              <th></th>
             </tr>
           )}
         </thead>
@@ -37,7 +38,10 @@ export default function Hero({ transactions, setTransactions }) {
           {transactions.map((tx) => (
             <tr key={tx.hash}>
               <td>{tx.to}</td>
-              <td>{tx.value / 1000000000000000000}</td>
+              <td>{tx.value}</td>
+              <td>
+                <button>Split+</button>
+              </td>
             </tr>
           ))}
         </tbody>
