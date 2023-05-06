@@ -5,6 +5,7 @@ import { useState } from "react";
 
 function App() {
   const [transactions, setTransactions] = useState([]);
+<<<<<<< HEAD
   console.log(
     "transactions at app",
     transactions,
@@ -13,6 +14,10 @@ function App() {
     "transactions at app"
   );
 
+=======
+  // console.log('transactions at app', transactions, 'setTransactions at app', setTransactions, 'transactions at app');
+  
+>>>>>>> 907320f8c8370d630af105490205178e104aa391
   return (
     <>
       <div className="header">
