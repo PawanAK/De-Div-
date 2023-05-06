@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./MyModel.css";
+import sendNotification from "./SendNotification";
 
 export default function MyModal({ value }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,10 +26,14 @@ export default function MyModal({ value }) {
   };
 
   // Handle form submission here
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // console.log(inputFields);
-    // console.log("Split Equally:", splitEqually);
+
+    // Loop through inputFields and send a notification to each friend's wallet address
+    for (const input of inputFields) {
+      const message = `You owe $${calculateShare()} to 0x3A80439CFC929ab1E832853707344016a2668e7a`;
+      await sendNotification(input.address, message);
+    }
   };
 
   const calculateShare = () => {
