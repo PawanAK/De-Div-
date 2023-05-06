@@ -1,28 +1,14 @@
 import React, { useState, useEffect } from "react";
 import MyModal from "./MyModel.jsx";
 
-export default function Hero({ transactions, setTransactions }) {
-  //   console.log("hero section this is", transactions, setTransactions);
-
+export default function Hero({ transactions }) {
   const [showTableHeaders, setShowTableHeaders] = useState(false);
 
   useEffect(() => {
-    // This effect will run only once when the component mounts.
-    if (transactions.length > 0) {
+    if (transactions.some((tx) => tx.value > 0)) {
       setShowTableHeaders(true);
     }
   }, [transactions]);
-
-  console.log(
-    "showTableHeaders",
-    showTableHeaders,
-    "transactions",
-    transactions,
-    "setTransactions",
-    setTransactions,
-    "transactions at hero"
-  );
-  console.log(typeof MyModal, "asdfasfasfdasfasdf");
 
   return (
     <>
@@ -36,15 +22,20 @@ export default function Hero({ transactions, setTransactions }) {
           )}
         </thead>
         <tbody>
-          {transactions.map((tx) => (
-            <tr key={tx.hash}>
-              <td>{tx.to}</td>
-              <td>{(tx.value / 1000000000000000000).toFixed(6)}</td>
-              <td>
-                <MyModal value={(tx.value / 1000000000000000000).toFixed(6)} />
-              </td>
-            </tr>
-          ))}
+          {transactions
+            .filter((tx) => tx.value > 0)
+            .sort((a, b) => a.timestamp - b.timestamp)
+            .map((tx) => (
+              <tr key={tx.hash}>
+                <td>{tx.to}</td>
+                <td>{(tx.value / 1000000000000000000).toFixed(8)}</td>
+                <td>
+                  <MyModal
+                    value={(tx.value / 1000000000000000000).toFixed(8)}
+                  />
+                </td>
+              </tr>
+            ))}
         </tbody>
       </table>
     </>
