@@ -31,7 +31,6 @@ export default function Hero({ transactions, setTransactions }) {
             <tr>
               <th>To</th>
               <th>Value</th>
-              <th></th>
             </tr>
           )}
         </thead>
