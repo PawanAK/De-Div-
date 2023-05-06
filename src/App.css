@@ -5,7 +5,9 @@
   text-align: center;
 }
 .header{
-  background-color:aqua;
+  background-color:rgb(62, 83, 83);
+  border-radius: 5%;
+  padding: 35px;
 }
 .logo {
   height: 6em;
