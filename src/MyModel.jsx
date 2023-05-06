@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./MyModel.css";
 import sendNotification from "./SendNotification";
 
@@ -6,6 +6,18 @@ export default function MyModal({ value }) {
   const [isOpen, setIsOpen] = useState(false);
   const [inputFields, setInputFields] = useState([{ address: "" }]);
   const [splitEqually, setSplitEqually] = useState(true);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpen]);
 
   const closeModal = () => {
     setIsOpen(false);

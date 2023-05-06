@@ -1,6 +1,9 @@
 import { ethers } from "ethers";
 import { useState } from "react";
 import Transact from "./transact";
+import Logo from "./Logo";
+import { Button, Typography, Box, Slide, Grow } from "@mui/material";
+import "./Metamask.css";
 
 const Metamask = ({ transactions, setTransactions }) => {
   const [errorMsg, setErrorMsg] = useState(null);
@@ -24,7 +27,6 @@ const Metamask = ({ transactions, setTransactions }) => {
         params: [String(address), "latest"],
       })
       .then((bal) => {
-        // console.log(bal);
         setUserBallance(ethers.utils.formatEther(bal));
       });
   };
@@ -33,18 +35,32 @@ const Metamask = ({ transactions, setTransactions }) => {
     setDefaultAccount(accName);
     getBalance(accName);
   };
-  // console.log('transactions at metamask', transactions);
-  
+
   return (
-    <div className="header__connectMeta">
-      <button onClick={connectWallet}>Connect</button>
-      <p>{errorMsg}</p>
-      {defaultAccount && (
-        <Transact
-          defaultAccount={defaultAccount}
-          transactions={transactions}
-          setTransactions={setTransactions}
-        />
+    <div className="metamask">
+      <Logo connected={!!defaultAccount} />
+      {!defaultAccount ? (
+        <Box className="metamask__connectMeta">
+          <Slide direction="up" in={!defaultAccount} mountOnEnter unmountOnExit>
+            <Button variant="contained" color="primary" onClick={connectWallet}>
+              Connect
+            </Button>
+          </Slide>
+          <Typography>{errorMsg}</Typography>
+        </Box>
+      ) : (
+        <Box className="metamask__accountInfo">
+          <Grow in={!!defaultAccount}>
+            <Typography className="metamask__accountAddress over_right_typo">
+              {defaultAccount}
+            </Typography>
+          </Grow>
+          <Transact
+            defaultAccount={defaultAccount}
+            transactions={transactions}
+            setTransactions={setTransactions}
+          />
+        </Box>
       )}
     </div>
   );

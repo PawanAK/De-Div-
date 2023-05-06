@@ -1,0 +1,36 @@
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo__image {
+  max-width: 20%; /* Set the maximum width */
+  height: auto; /* Height will adjust automatically */
+}
+
+.logo__wrapper {
+  width: 50%; /* Adjust this value according to your desired size */
+}
+.logo__text {
+  margin-left: 10px;
+}
+.logo--connected {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  transition: transform 0.5s ease-in-out;
+}
+
+.logo--connected {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.logo--connected .logo__text {
+  transform: translateX(120%);
+}
