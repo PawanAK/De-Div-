@@ -12,7 +12,7 @@ function Transact({ defaultAccount, transactions, setTransactions }) {
     if (defaultAccount) {
       async function fetchTransactions() {
         const response = await fetch(
-          `https://api-testnet.polygonscan.com/api?module=account&action=txlist&address=${defaultAccount}&startblock=0&endblock=99999999&sort=asc&apikey=<YOUR_API_KEY>`
+          `https://api-testnet.polygonscan.com/api?module=account&action=txlist&address=${defaultAccount}&startblock=0&endblock=99999999&sort=asc&apikey=YDQMQW63QRBV2VSUQ9A4AV15N8VPPZ4I7Y`
         );
         const data = await response.json();
         setTransactions(data.result);
