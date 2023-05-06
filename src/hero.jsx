@@ -18,8 +18,6 @@ export default function Hero({ transactions, setTransactions }) {
       <table>
         <thead>
           <tr>
-            <th>Hash</th>
-            <th>From</th>
             <th>To</th>
             <th>Value</th>
           </tr>
@@ -28,8 +26,6 @@ export default function Hero({ transactions, setTransactions }) {
         {!isFirstRender &&
             transactions.map((tx) => (
               <tr key={tx.hash}>
-                <td>{tx.hash}</td>
-                <td>{tx.from}</td>
                 <td>{tx.to}</td>
                 <td>{tx.value}</td>
               </tr>
