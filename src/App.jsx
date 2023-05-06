@@ -15,7 +15,6 @@ function App() {
       <Hero
         transactions={transactions}
         setTransactions={setTransactions}
-        className="hero"
       />
     </>
   );
