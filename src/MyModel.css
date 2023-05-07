@@ -92,3 +92,22 @@ input[type="checkbox"] {
   width: auto;
   margin-right: 0.5em;
 }
+.open-modal-btn,
+.add-field-btn,
+.submit-btn,
+.close-modal-btn {
+  font-size: 0.9rem;
+  padding: 0.5em 0.8em;
+  border-radius: 0.2em;
+  background-color: #6a1b9a; /* Change this to the desired purple color */
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.open-modal-btn:hover,
+.add-field-btn:hover,
+.submit-btn:hover,
+.close-modal-btn:hover {
+  background-color: #9c27b0; /* Change this to the desired hover color */
+}
