@@ -33,7 +33,7 @@
   background-image: linear-gradient(
     90deg,
     rgba(16, 11, 91, 0.7792207792207793) 0%,
-    rgba(98, 4, 167, 1) 45%,
+    rgb(149, 0, 255) 45%,
     rgba(252, 6, 255, 1) 100%
   );
   -webkit-background-clip: text;

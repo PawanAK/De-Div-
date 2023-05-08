@@ -42,7 +42,18 @@ const Metamask = ({ transactions, setTransactions }) => {
       {!defaultAccount ? (
         <Box className="metamask__connectMeta">
           <Slide direction="up" in={!defaultAccount} mountOnEnter unmountOnExit>
-            <Button variant="contained" color="primary" onClick={connectWallet}>
+            <Button
+              variant="contained"
+              style={{
+                backgroundColor: "purple",
+                color: "white",
+                position: "absolute",
+                top: "20px",
+                bottom: "90vh",
+                right: "20px",
+                left: "90vh",
+              }}
+              onClick={connectWallet}>
               Connect
             </Button>
           </Slide>
